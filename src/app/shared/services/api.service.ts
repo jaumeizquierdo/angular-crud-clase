@@ -22,14 +22,14 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getUsers$() {
-    return this.http.get('http://localhost:3000/users/');
+    return this.http.get('http://localhost:3000/members/');
   }
   getUser$(id: string) {
-    return this.http.get<User>(`http://localhost:3000/users/${id}`);
+    return this.http.get<User>(`http://localhost:3000/members/${id}`);
   }
 
   addUser$(user: User) {
-    return this.http.post<User>('http://localhost:3000/users/', user)
+    return this.http.post<User>('http://localhost:3000/members/', user)
       .pipe(tap((user: User) => console.log(`added Member: id=${user.id}`)),
             catchError(error => {
               console.log(error);
@@ -38,11 +38,11 @@ export class ApiService {
   }
 
   deleteUser$(id: number) {
-      return this.http.delete(`http://localhost:3000/users/${id}`);
+      return this.http.delete(`http://localhost:3000/members/${id}`);
   }
 
   editUser$(user: User) {
-    return this.http.put<User>('http://localhost:3000/users/', user)
+    return this.http.put<User>('http://localhost:3000/members/', user)
     .pipe(tap((user: User) => console.log(`added Member: id=${user.id}`)),
           catchError(error => {
             console.log(error);

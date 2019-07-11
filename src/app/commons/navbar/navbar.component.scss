@@ -1,0 +1,28 @@
+a {
+  text-decoration: none;
+  color: whitesmoke;
+  &:hover {
+    color: lightgray;
+  }
+}
+
+.navigation-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  li {
+    a {
+      font-size: 0.8em;
+    }
+  }
+}
+
+mat-toolbar {
+  border-radius: 3px;
+}
+
+@media(max-width: 959px) {
+  mat-toolbar {
+    border-radius: 0px;
+  }
+}
