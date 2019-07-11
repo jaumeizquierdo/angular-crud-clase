@@ -1,0 +1,10 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let user of users">
+     <a matLine [routerLink]="['/users', user.id]">{{ user.name }}</a>
+     <button mat-icon-button color="warn" (click)='deleteUser(user.id)'>
+        <mat-icon>delete_outline</mat-icon>
+     </button>
+  </mat-list-item>
+</mat-nav-list>
+
+<button mat-flat-button color="primary" [routerLink]="['/newUser']">Nuevo usuario</button>

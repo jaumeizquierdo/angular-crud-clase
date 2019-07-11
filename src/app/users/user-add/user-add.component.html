@@ -1,0 +1,46 @@
+<form fxLayout="column">
+  <div class="input-row" fxLayout="column" fxLayout.lt-md="column" fxLayoutGap="20px" fxLayoutGap.lt-md="0px">
+    <mat-form-field>
+      <input matInput id="name" name="name" #nameField
+      [placeholder]="placeholder.name"
+      [(ngModel)]="userData.name">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="company" name="company" #companyField
+        [placeholder]="placeholder.company"
+        [(ngModel)]="userData.company">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="address" name="address" #addressField
+        [placeholder]="placeholder.address"
+        [(ngModel)]="userData.address">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="phone" name="phone" #phoneField
+        [placeholder]="placeholder.phone"
+        [(ngModel)]="userData.phone">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="email" name="email" #emailField
+        [placeholder]="placeholder.email"
+        [(ngModel)]="userData.email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput id="gender" name="gender" #genderField
+        [placeholder]="placeholder.gender"
+        [(ngModel)]="userData.gender">
+    </mat-form-field>
+  </div>
+
+
+  <button mat-flat-button color="primary" (click)="addUser()" #sendbutton>Add user</button>
+</form>
+
+
+
+{{ user | json}}<br>
