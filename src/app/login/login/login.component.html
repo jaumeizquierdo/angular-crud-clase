@@ -1,9 +1,15 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-<label>Email
-  <input placeholder="email" [formControl]="email">
-</label>
-<label>Password
-  <input placeholder="password" [formControl]="password">
-</label>
-<button type="submit">Enviar</button>
+  <mat-card>
+    <label>Email
+      <input placeholder="email" [formControl]="email">
+    </label>
+    <label>Password
+      <input placeholder="password" [formControl]="password">
+    </label>
+    <button type="submit">Enviar</button>
+    <mat-error *ngIf="(email.invalid || password.invalid) && (email.dirty || email.touched)">
+        Los campos no pueden estar vacíos
+    </mat-error>
+  </mat-card>
 </form>
+{{loginForm.value | json}}
